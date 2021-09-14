@@ -1,0 +1,121 @@
+{
+  /*
+    tsconfig.json 是 ts 编译器的配置文件 ts编译器可以根据它的信息来对代码进行编译
+      "include" 用来指定哪些 ts 文件可以被编译
+      "exclude" 用来指定哪些 ts 文件不可以被编译
+        默认值: ["node_modules","bower_components","jspm_packages"]
+      "extends" 定义被继承的配置文件
+        示例: "extends": "./configs/base"
+        即当前配置文件中会自动包含config目录下base.json的所有配置信息
+      "files" 指定被编译文件的列表
+        示例: "files": [
+          "inner.ts",
+          "test.ts"
+        ]
+        files 指定单个文件 所以适用于小型项目中
+  */
+
+  "include": [
+    // 两个 * 表示任意目录 一个 * 表示任意文件
+    // 数组里可以写多个路径
+    "./src/*",
+    "./inner/*",
+    "./**/*"
+  ],
+  // "exclude": [
+  //   "./test/*"
+  // ]
+
+  /*
+    compilerOptions 编译器的选项
+
+    "target" 用于指定编译后js文件的 ES 版本
+      默认: "target": "ES3"
+      示例: "target": "ES6" 或 "ES2016" 或 "ESNext" (为ES最新版本)
+    
+    "module" 用于指定要使用的模块化的规范
+    
+    "lib" 用于指定项目中要用到的库 如 dom (document对象) jquery
+      若指定lib为空则 不存在的库无法使用 如dom中的 console.log()等方法
+  
+    "outDir" 用于指定编译后文件的所在目录
+
+    "outfile" 用于指定将全局作用域下的文件合并到同一个文件中
+      一般结合打包工具使用 因为本身无法合并模块化文件
+
+    "allowJs" 用于指定是否对js文件进行编译 默认为false 即不对js文件进行任何操作
+  
+    "checkJs" 用于指定检测js代码是否符合语法规范 默认是false
+      设置为true 会去检查js文件里的语法是否符合ts语法规范
+  
+    "removeComments" 用于指定是否移除编译前文件里的注释 默认false
+    
+    "noEmit" 用于指定是否生成编译后的文件 默认为false 即生成文件
+      执行编译过程 但不生成最后的文件
+    
+    "noEmitOnError" 用于指定发生错误时是否生成编译后的文件 默认为false
+    即 发生错误时仍生成文件
+
+    ---------------------语法检查配置选项------------------------
+    "strict" 语法检查总开关 若strict 为 true 其余语法检查配置项全为 true
+    默认值 false
+
+    "alwaysStrtic" 用于指定编译后的js文件是否引入严格模式 use strtic 
+    默认值 false
+
+    "noImplicitAny" 用于指定 是否允许设置默认的any类型  默认值 false
+    一般开启用于检查是否无意间设置了any类型 true开启检查
+  
+    "noImplicitThis" 不允许不明确类型的this 若开启后需要明确指定this的类型
+      示例 function aa(this:Window) {  // this:Window 不写会报错
+            console.log(this) // 指定类型后this不报错
+          }
+
+    "strictNullChecks" 用于指定是否严格检查空值 默认值 false
+      示例 let box = document.querySelector(".box");
+           box.addEventListener("click", () => {
+           console.log("box click");
+    当设置为 true 即开启空值检查 会报错
+    因为页面中可能没有 box 这个元素 那么box变量就可能为空
+});
+    */
+  "compilerOptions": {
+    /*
+      Valid values: "ES3", "ES5", "ES6", "ES2015", "ES2016", "ES2017", "ES2018", "ES2019", "ES2020", "ES2021", "ESNext".
+    */
+    "target": "es3",
+    /*
+      Valid values: "CommonJS", "AMD", "System", "UMD", "ES6", "ES2015", "ES2020", "ESNext", "None".
+    */
+    "module": "system",
+
+    /*
+      Valid values: "ES5", "ES6", "ES2015", "ES2015.Collection", "ES2015.Core", "ES2015.Generator", "ES2015.Iterable", "ES2015.Promise", "ES2015.Proxy", "ES2015.Reflect", "ES2015.Symbol.WellKnown", "ES2015.Symbol", "ES2016", "ES2016.Array.Include", "ES2017", "ES2017.Intl", "ES2017.Object", "ES2017.SharedMemory", "ES2017.String", "ES2017.TypedArrays", "ES2018", "ES2018.AsyncGenerator", "ES2018.AsyncIterable", "ES2018.Intl", "ES2018.Promise", "ES2018.Regexp", "ES2019", "ES2019.Array", "ES2019.Object", "ES2019.String", "ES2019.Symbol", "ES2020", "ES2020.BigInt", "ES2020.Promise", "ES2020.String", "ES2020.Symbol.WellKnown", "ESNext", "ESNext.Array", "ESNext.AsyncIterable", "ESNext.BigInt", "ESNext.Intl", "ESNext.Promise", "ESNext.String", "ESNext.Symbol", "DOM", "DOM.Iterable", "ScriptHost", "WebWorker", "WebWorker.ImportScripts", "Webworker.Iterable", "ES7", "ES2021", "ES2020.SharedMemory", "ES2020.Intl", "ES2021.Promise", "ES2021.String", "ES2021.WeakRef", "ESNext.WeakRef".
+    */
+    // "lib": ["dom"]
+    "outDir": "./dist",
+
+    "outFile": "./dist/index.js",
+
+    "allowJs": true,
+
+    "checkJs": false,
+
+    "removeComments": false,
+
+    "noEmit": false,
+
+    "noEmitOnError": false,
+
+    // 语法检查选项
+    "strict": true,
+
+    "alwaysStrict": true,
+
+    "noImplicitAny": false,
+
+    "noImplicitThis": true,
+
+    "strictNullChecks": true
+  }
+}
