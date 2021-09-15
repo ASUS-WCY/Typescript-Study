@@ -30,3 +30,6 @@ var obj: { name: string };
 obj = {
   name: "steve jobs",
 };
+
+console.log(Promise);
+
