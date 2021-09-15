@@ -12,11 +12,10 @@ function sum(a: number, b: number): number {
 console.log(sum(a, b));
 
 console.log(differ(a, b));
- 
 
 var i = 0;
 
-alert(i)
+alert(i);
 
 var tt = setInterval(function () {
   alert(++i);
@@ -25,3 +24,9 @@ var tt = setInterval(function () {
 var timer = setTimeout(function () {
   clearInterval(tt);
 }, 3000);
+
+var obj: { name: string };
+
+obj = {
+  name: "steve jobs",
+};

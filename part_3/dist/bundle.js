@@ -10,9 +10,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(a, b) {
-    return a > b ? a - b : b - a;
+  return a > b ? a - b : b - a;
 }
-
 
 /***/ })
 /******/ 	]);
@@ -78,22 +77,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _temp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 console.log("hello world!");
-let a = 1;
-let b = 2;
+var a = 1;
+var b = 2;
+
 function sum(a, b) {
-    return a + b;
+  return a + b;
 }
+
 console.log(sum(a, b));
 console.log((0,_temp__WEBPACK_IMPORTED_MODULE_0__["default"])(a, b));
 var i = 0;
 alert(i);
 var tt = setInterval(function () {
-    alert(++i);
+  alert(++i);
 }, 1000);
 var timer = setTimeout(function () {
-    clearInterval(tt);
+  clearInterval(tt);
 }, 3000);
-
+var obj;
+obj = {
+  name: "steve jobs"
+};
 })();
 
 /******/ })()
