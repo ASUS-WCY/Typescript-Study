@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "system",
+    "target": "ES2015",
+    "strict": true,
+    "outDir": "./dist",
+    "outFile": "./dist/index.js",
+    "noEmitOnError": true
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
