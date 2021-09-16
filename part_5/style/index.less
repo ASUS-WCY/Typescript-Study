@@ -1,0 +1,78 @@
+// 设置变量
+@bgcolor: #b7d4a8;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: bold 20px "Courier"
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  width: 360px;
+  height: 420px;
+  background-color: @bgcolor;
+  border: 10px solid #000;
+  border-radius: 40px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.stage {
+  position: relative;
+  width: 304px;
+  height: 304px;
+  border: 2px solid #000;
+
+  // 设置蛇的样式
+  #snake {
+    &>div {
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+      border: 1px solid @bgcolor;
+      // 开启绝对定位
+      position: absolute;
+    }
+  }
+
+  // 设置食物
+  #food {
+    width: 10px;
+    height: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px;
+    &>div {
+      width: 4px;
+      height: 4px;
+      background-color: #000;
+      transform: rotate(45deg);
+    }
+    // 开启绝对定位
+    position: absolute;
+    left: 40px;
+    top: 100px;
+  }
+}
+
+.score-panel {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
