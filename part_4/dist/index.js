@@ -10,7 +10,6 @@ class Person {
         // 定义实例属性
         // 可以通过 new出来的实例对象 能访问到的属性
         this.name = "steve jobs";
-        this.age = 56;
     }
     // 类属性（静态属性） 在前面加上static关键字声明
     // 通过类来访问 实例无法访问
@@ -25,6 +24,7 @@ class Person {
         console.log("Hi !");
     }
 }
+Person.age = 56;
 const _per = new Person();
 console.log(_per); // Person { name: 'steve jobs' }
 console.log(_per.name); // steve jobs

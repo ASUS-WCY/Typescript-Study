@@ -8,7 +8,7 @@ class Person {
   // 定义实例属性
   // 可以通过 new出来的实例对象 能访问到的属性
   name = "steve jobs";
-  age = 56;
+  static age = 56;
   // 类属性（静态属性） 在前面加上static关键字声明
   // 通过类来访问 实例无法访问
   // readonly 表示只读属性 并且要写在static后面
